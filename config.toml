@@ -276,7 +276,7 @@ enableEmoji = true
     enable = true
     # Custom content (HTML format is supported)
     # 自定义内容 (支持 HTML 格式)
-    custom = 'this is custom content footer'
+    # custom = 'this is custom content footer'
     # whether to show Hugo and theme info
     # 是否显示 Hugo 和主题信息
     hugo = true
@@ -288,13 +288,13 @@ enableEmoji = true
     author = true
     # site creation time
     # 网站创立年份
-    since = 2019
+    since = 2020
     # ICP info only in China (HTML format is supported)
     # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
     icp = ""
     # license info (HTML format is supported)
     # 许可协议信息 (支持 HTML 格式)
-    license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    license= 'andyjenkins.co.uk is Currently Hosted in <a rel="license external nofollow noopener noreffer" href="https://azure.microsoft.com/en-gb//" target="_blank">Azure</a>'
 
   # Section (all posts) page config
   # Section (所有文章) 页面配置
@@ -361,6 +361,9 @@ enableEmoji = true
       # whether to make the table of the contents automatically collapsed
       # 是否使目录自动折叠展开
       auto = true
+      # LoveIt NEW | 0.2.9 whether to keep the static table of the contents in front of the post
+      # keepStatic = true
+      
     # Code config
     # 代码配置
     [params.page.code]
@@ -557,7 +560,7 @@ enableEmoji = true
     cursorChar = "|"
     # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
     # 打字结束之后光标的持续时间 (单位是毫秒, "-1" 代表无限大)
-    duration = -1
+    duration = 5000
 
   # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
   # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu
@@ -693,6 +696,15 @@ enableEmoji = true
   name = "Andy Jenkins"
   email = "stonestokie@outlook.com"
   link = "https://www.linkedin.com/in/stonestokie/"
+
+  # LoveIt NEW | 0.2.7 Cookie consent config
+  [params.cookieconsent]
+    enable = true
+    # text strings used for Cookie consent banner
+    [params.cookieconsent.content]
+      message = "My Blog uses cookies to ensure you get the best experience on our website."
+      dismiss = "OK!"
+      link = "https://www.cookiesandyou.com/"
 
 # Sitemap config
 # 网站地图配置
