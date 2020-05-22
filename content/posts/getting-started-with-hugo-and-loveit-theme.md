@@ -2,7 +2,7 @@
 title: "Getting Started with Hugo and the LoveIt theme for Blogging"
 subtitle: "How to install Hugo and the LoveIT theme, setup your basic Dev workflow with Git and basic theme configuration options"
 date: 2020-05-04T14:12:25+01:00
-lastmod: 2020-05-04T14:12:25+01:00
+lastmod: 2020-05-22
 draft: true
 author: ""
 authorLink: ""
@@ -118,28 +118,15 @@ Open the config.toml file and comment out the line for the Themes Dir - This wil
 
 At this point you should be good to go!.  The LoveIt theme documentation is a great resource for the full configuration of your site so I wont cover that in detail here.  However feel free to leave a comment if you require more info.
 
-## Running the Theme Locally
+Now before we run the theme locally we have to make an initial commit, otherwise you will get the following error message ...
 
-So now we have a good structure in place to manage the changes to our blog as we edit and configure and hopefully add content!.  All we have to do now is test the website locally, this you can do with this simple command ...
-
-```bash
-hugo serve --disableFastRender -D
-```
-By default all new posts are in Draft using the pages frontmatter, the -D command ensures drafts appear when you are working locally. 
-
-If you have no errors, from a browser head to **localhost:1313** and hey presto you will have a fully working website based on the example site!.
-
-you can add a page using the following Hugo command 
-
-```bash
-hugo new posts/name-of-your-post.md
-```
+![1stRunGitError](/images/getting-started-with-hugo-and-loveit-theme/FirstRunNoGit.jpg)
 
 ## Committing initial theme to GitHub
 
-So at this point, we have created a repo on Github, we added a locally git aware folder and added the loveit theme as a submodule, we have made some basic changes to the theme and we have launched the website locally and added a new page.  Thats not bad going!.
+:(far fa-sticky-note): *Quick Recap* - At this point, we have created a repo on Github, we added a locally git aware folder and added the LoveIt theme as a submodule, we have made some basic changes to the theme to ensure we can work with it locally.  Thats not bad going!.
 
-Now lets make sure our baseline work is committed to our Git Hub repo we created earlier.
+So before we run locally, lets make sure our baseline work is committed to our Git Hub repo we created earlier.
 
 From a terminal window, head over to the folder you created for the website and type the following
 
@@ -162,7 +149,7 @@ In your config file you should see that the submodule exists as well as the remo
 If all is good, lets make the commit and push our code to Github.
 
 ```bash
-git Commit -M “Initial Commit based on LoveIt template”
+git commit -m “Initial Commit”
 ```
 Now before committing, it makes sense to add .gitignore file to ensure we don't push stuff we don't need for the blog.  Here is the current .gitignore file that I use for my blog 
 
@@ -173,9 +160,25 @@ We are now ready to push to GitHub
 ```bash
 git push -u origin master
 ```
+Head over to Github and your files should now be available in your repo.
 
-Head over to Github and your files should now be available on Github and we can run our site locally and begin testing!.
 
+## Running the Theme Locally
+
+So now we have a good structure in place to manage the changes to our blog as we edit and configure and hopefully add content!.  All we have to do now is test the website locally, this you can do with this simple command ...
+
+```bash
+hugo serve --disableFastRender -D
+```
+By default all new posts are in Draft using the pages frontmatter, the -D command ensures drafts appear when you are working locally. 
+
+If you have no errors, from a browser head to **localhost:1313** and hey presto you will have a fully working website based on the example site!.
+
+you can add a page using the following Hugo command 
+
+```bash
+hugo new posts/name-of-your-post.md
+```
 Thats it!, You now have a baseline website working fully git enabled. If you work with say Visual Studio code, this will automatically recognise you are using git and you can manage your changes, commits and branches directly from Code without having to use the command line.  
 
 As a next step, I recommend creating a develop branch and start modifying and creating content!!.  Enjoy :smile:
