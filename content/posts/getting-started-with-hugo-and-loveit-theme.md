@@ -3,7 +3,7 @@ title: "Getting Started with Hugo and the LoveIt theme for Blogging"
 subtitle: "How to install Hugo and the LoveIT theme, setup your basic Dev workflow with Git and basic theme configuration options"
 date: 2020-05-04T14:12:25+01:00
 lastmod: 2020-05-22
-draft: true
+draft: false
 author: ""
 authorLink: ""
 description: "Getting started with Hugo the LoveIt theme, setting up your basic developer workflows with Git and Github and going through some of the basic configuration changes you can see on my blog."
