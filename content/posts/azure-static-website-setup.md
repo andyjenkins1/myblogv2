@@ -1,6 +1,6 @@
 ---
 title: "Setting up your Static Website on Azure"
-subtitle: ""
+subtitle: "End-2-End Setup of using Azure Static Website to host your blog"
 date: 2020-05-26T11:12:09+01:00
 lastmod: 2020-05-26T11:12:09+01:00
 draft: true
@@ -127,3 +127,41 @@ This will return the endpoint of your blog, copy the URL and paste into your bro
 
 ### Enable Basic Metrics on your site
 
+Add stuff here
+
+## Create an Azure CDN
+
+Now we have the basic static website working the next step is to deploy an Azure CDN, this will provide 2 benefits cache the site to help with loading times and will also ensure we get a free SSL certificate to help to make the site secure ...
+
+1.  From the Azure Portal, select your storage account and click on the *Azure CDN* Menu Option
+2.  Select *Create New Endpoint* give your CDN Profile a name, select pricing tier (I recommend Microsoft Standard) and give the endpoint a name.
+3.  The *Origin* Hostname should be the name of the storage account and already be populated.
+4.  Click *Create*
+5.  It takes around a minute to create and you should then see a status of running for your created endpoint.
+
+We now need to make some changes to the endpoint to ensure it caches our content correctly.
+
+1. Within your RG, select the storage account you have used for your static website
+2. Select *Static Website* from the menu
+3. Copy your **Primary endpoint** Address as we will need that in a moment.  
+4. Back to your RG now and within it, select the created CDN Endpoint.
+5. Stop the Endpoint by selecting *Stop* From the GUI
+6. From the Endpoint menu select *Origin*
+7. Change the Origin Type from *Storage* to **Custom Origin**
+8. In the *Origin Hostname* field paste your *Primary Endpoint Address* but remove the https:// you just need the hostname.
+9. The *Origin Host Header* should also be the same, if not follow the same step as above.
+10.  Once the changes have been made select **Save** 
+11.  We now need to start the CDN again, from the *Overview* page of the Endpoint, select **Start**.
+12.  We should now have a working CDN!.
+
+### Test your CDN is working
+
+The last step is to test that content is being serve from the CDN.  To test this head to your CDN endpoint and browse to the CDN endpoint hostname, it should display the same content as your primary storage account endpoint!.  It can take upto 10 minutes for this to work, but typically happens in around a minute.
+
+You will also notice you now have a valid SSL 
+
+
+
+
+
+## Upload your Hugo Site
